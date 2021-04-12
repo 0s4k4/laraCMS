@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//se hace referencia en cada elemento donde se use la db
+use Illuminate\Support\Facades\DB;
+
 
 class EjemploController extends Controller
 {
@@ -13,7 +16,22 @@ class EjemploController extends Controller
      */
     public function index()
     {
-        return view('modulos.contacto');
+        //cadena de conexion insert
+
+        //DB::insert('insert into ejemplo (titulo,prueba) values (?, ?)', ['ejemplo1','prueba1']);
+        //cadena para actualizar 
+       // $actualizar = DB::update('update ejemplo set titulo = "nuevo titulo" where id = ?', [1]);
+        //return $actualizar;
+
+        //cadena para eliminar 
+        //$eliminar = DB::delete('delete from ejemplo where id = ?', [1]);
+        //return $eliminar;
+        //cade de conexion leer
+
+        $leer = DB::select('select * from ejemplo');
+        return $leer;
+
+        
         
     }
 
@@ -46,7 +64,7 @@ class EjemploController extends Controller
      */
     public function show($id,$titulo,$categoria)
     {
-        return view('modulos.contacto', compact('id', 'titulo','categoria'));
+      
     }
 
     /**

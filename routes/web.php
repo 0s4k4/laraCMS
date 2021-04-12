@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,6 @@ Route::get('/usuario/{id}/{nombre}', function ($id,$nombre) {
 //cuando inicas en contacto, se ejecuta el controlador con la accion index
 Route::get('/contacto','EjemploController@index');
 Route::get('/contacto/{id}/{titulo}/{categoria}','EjemploController@show');
+
+
+Route::get('/ejemplo','EjemploController@index');
